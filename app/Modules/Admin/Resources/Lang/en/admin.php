@@ -24,6 +24,7 @@ return [
     'exit'=>'Exit',
     'images'=>'Images',
     'files'=>'Files',
+    'users'=>'Users',
     'modules'=>'Modules',
     'content'=>'Content',
 

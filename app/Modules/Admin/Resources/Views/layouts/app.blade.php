@@ -5,14 +5,15 @@
             <span class="logo-mini">Lara</span>
             <span class="logo-lg"><b>Lara</b>CMS</span>
         </a>
-        <nav class="navbar navbar-static-top">
 
-            @if (Auth::user())
+        <nav class="navbar navbar-static-top">
+            @if (Auth::guard('admin')->user())
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li class="dropdown user user-menu">
-                            <a href="{{route('admin.users.edit', Auth::user()->id)}}">
-                                <span class="hidden-xs">{{ Auth::user()->name }}</span>
+
+                            <a href="{{route('admin.admins.edit', Auth::guard('admin')->user()->id)}}">
+                                <span class="hidden-xs">{{ Auth::guard('admin')->user()->name }}</span>
                             </a>
                         </li>
 
