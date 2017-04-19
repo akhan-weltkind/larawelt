@@ -1,15 +1,21 @@
 <?php
+Route::localizedGroup(function () {
 
+    Route::group(['prefix' => config('cms.uri')], function () {
 
-Route::group(['prefix' => config('cms.uri')], function() {
+        Route::resource('users', 'Admin\IndexController');
 
-    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    });
+
+    /*Auth route*/
+    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('user.register');
+    Route::post('register', 'Auth\RegisterController@register');
+
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('user.login');
     Route::post('login', 'Auth\LoginController@login');
-    Route::get('logout', 'Auth\LoginController@logout');
+    Route::get('logout', 'Auth\LoginController@logout')->name('user.logout');
 
-    Route::resource('users', 'Admin\IndexController');
+    /*Personal cabinet*/
 
-    #Route::get('news', 'App\Modules\News\Http\Controllers\Index@index');
-
-
+    Route::get('personal','IndexController@personal')->name('user.personal')->middleware('page');
 });

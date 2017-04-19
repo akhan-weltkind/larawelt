@@ -1,5 +1,6 @@
 <?php
 return [
+    'title'=>'Users',
     'delete_record_sure'=>'Are you sure?',
     'no_records'=>'No records',
     'save'=>'Save',

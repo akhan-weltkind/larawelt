@@ -14,12 +14,8 @@
     <td>{{ $entity->name }}</td>
     <td>{{ $entity->email }}</td>
     <td>
-
         @include('admin::common.controls.edit', ['routePrefix'=>$routePrefix, 'id'=>$entity->id])
-
-        @if (Auth::user()->id != $entity->id)
-            @include('admin::common.controls.destroy', ['routePrefix'=>$routePrefix, 'id'=>$entity->id])
-        @endif
+        @include('admin::common.controls.destroy', ['routePrefix'=>$routePrefix, 'id'=>$entity->id])
     </td>
 </tr>
 @endforeach

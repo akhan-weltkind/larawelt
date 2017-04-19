@@ -24,5 +24,9 @@ class Breadcrumbs{
         return self::$crumbs;
     }
 
+    public static function resetAll(){
+        self::$crumbs = [];
+    }
+
 
 }

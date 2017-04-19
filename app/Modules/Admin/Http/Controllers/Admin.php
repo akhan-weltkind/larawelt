@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\View;
 abstract class Admin extends Controller
 {
 
-    protected $viewPrefix = '';
-    protected $routePrefix = '';
+    protected $viewPrefix   = '';
+    protected $routePrefix  = '';
+    protected $page         = '';
+    protected $activeGroup  = '';
 
     protected $messages = [
         'store'=>'admin::admin.messages.store',
@@ -28,12 +30,10 @@ abstract class Admin extends Controller
         parent::__construct();
         $this->setRoutePrefix();
         $this->setViewPrefix();
-
+        $this->setPage();
+        $this->setActiveGroup();
         $this->fetchEntity();
         $this->share();
-
-
-
     }
 
     protected function fetchEntity(){
@@ -44,11 +44,23 @@ abstract class Admin extends Controller
         }
     }
 
-
     protected function share(){
         View::share('title', module_config('settings.title'));
         View::share('routePrefix', $this->routePrefix);
+        View::share('page', $this->page);
+        View::share('activeGroup', $this->activeGroup);
+    }
 
+    protected function setPage(){
+        if (module()) {
+            $this->page = module();
+        }
+    }
+
+    protected function setActiveGroup(){
+        if (module()) {
+            $this->activeGroup = module_config('menu.items.0.group');
+        }
     }
 
     protected function setRoutePrefix(){
@@ -73,7 +85,6 @@ abstract class Admin extends Controller
     public function getIndexViewName(){
         return $this->viewPrefix.'admin.index';
     }
-
 
     public function getRules($request, $id=false){
         return [];

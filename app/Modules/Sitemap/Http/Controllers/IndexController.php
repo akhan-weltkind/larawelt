@@ -17,6 +17,7 @@ class IndexController extends Controller
     }
 
     public function robots(){
+        dd('blya');
         $content = file( $_SERVER['DOCUMENT_ROOT'].'/robots/robots.txt' );
 
         config(['app.debug' => true]);

@@ -1,7 +1,7 @@
 <?php
 return [
-    'title'=>'Administrators',
-    'title_list'=>'Administrators list',
+    'title'=>'Users',
+    'title_list'=>'Users list',
 
     'name' => 'Name',
     'email' => 'Email',

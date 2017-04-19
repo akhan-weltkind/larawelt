@@ -92,8 +92,8 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             @include('tree::menu')
 
-                            @include('common.languages')
 
+                            @include('common.languages')
                             <form class="navbar-form navbar-right" action="#" method="get">
                                 <div class="input-group">
                                     <input type="text" required placeholder="Поиск">
@@ -104,6 +104,7 @@
                                     </div>
                                 </div>
                             </form>
+                            @include('users::auth.main')
                         </div>
                     </div>
                 </div>

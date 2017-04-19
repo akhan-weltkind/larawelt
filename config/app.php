@@ -174,7 +174,7 @@ return [
         Caffeinated\Modules\ModulesServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
         //
-
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * Application Service Providers...
          */

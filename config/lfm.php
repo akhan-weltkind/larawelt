@@ -12,7 +12,7 @@ return [
     'use_package_routes'    => true,
 
     // For laravel 5.2, please set to ['web', 'auth']
-    'middlewares'           => ['web', 'auth'],
+    'middlewares'           => ['web', 'admin.user'],
 
     // Add prefix for routes
     'prefix'           => '/admin/laravel-filemanager',
@@ -26,7 +26,7 @@ return [
     // NOTE: make sure to use an unique field.
     'user_field'            => 'id',
 
-    'shared_folder_name'    => 'shares',
+    'shared_folder_name'    => '/',
     'thumb_folder_name'     => 'thumbs',
 
     'images_dir'            => 'public/uploads/images/',

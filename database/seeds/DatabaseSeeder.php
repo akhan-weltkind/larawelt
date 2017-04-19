@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('users')->insert(
             array(
                 'name' => 'admin',
@@ -19,5 +20,6 @@ class DatabaseSeeder extends Seeder
                 'created_at'=>time()
             )
         );
+
     }
 }

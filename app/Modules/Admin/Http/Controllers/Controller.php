@@ -16,7 +16,7 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin.user');
 
         //Не смотря на локаль, все переводы в админке русские
         Lang::setLocale(config('cms.admin_locale'));
