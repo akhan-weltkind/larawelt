@@ -3,6 +3,7 @@
 
 return [
     'groups'=>[
+        ['title' => trans('admin::admin.users'), 'slug'=>'users', 'icon' => 'fa-users', 'priority' => 100],
         ['title' => trans('admin::admin.content'), 'slug'=>'content', 'icon' => 'fa-file', 'priority' => 99],
         ['title' => trans('admin::admin.modules'), 'slug'=>'modules', 'icon' => 'fa-file', 'priority' => 98],
         ['title' => trans('admin::admin.title'), 'slug'=>'users', 'icon' => 'fa-users', 'priority' => 100]

@@ -53,6 +53,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Modules\Admin\Http\Middleware\RedirectIfAuthenticated::class,
         'admin.user' => \App\Modules\Admin\Http\Middleware\DeniedIfNotAdmin::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'admin.user' => \App\Modules\Admin\Http\Middleware\DeniedIfNotAdmin::class,
 
 
         'page' => \App\Modules\Tree\Http\Middleware\Page::class,

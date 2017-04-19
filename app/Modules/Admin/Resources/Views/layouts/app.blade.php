@@ -6,25 +6,19 @@
             <span class="logo-lg"><b>Lara</b>CMS</span>
         </a>
         <nav class="navbar navbar-static-top">
-            @if (Auth::guard('admin')->user())
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
+
+            @if (Auth::user())
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li class="dropdown user user-menu">
-
-                            <a href="{{route('admin.admins.edit', Auth::guard('admin')->user()->id)}}">
-                                <span>{{ Auth::guard('admin')->user()->name }}</span>
+                            <a href="{{route('admin.users.edit', Auth::user()->id)}}">
+                                <span class="hidden-xs">{{ Auth::user()->name }}</span>
                             </a>
                         </li>
 
                         <li class="dropdown user logout">
                             <a href="{{ url('/'.config('cms.uri').'/logout') }}">
-                                <span>@lang('admin::admin.exit')</span>
+                                <span class="hidden-xs">@lang('admin::admin.exit')</span>
                             </a>
                         </li>
                     </ul>
@@ -48,7 +42,7 @@
         </section>
         <section class="content">
             <div class="box">
-                <div class="box-body table-responsive">
+                <div class="box-body">
                     @yield('content')
                 </div>
             </div>
